@@ -7,6 +7,10 @@ import { BsBell } from "react-icons/bs";
 import { BsHash } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
+import { CiMoneyBill } from "react-icons/ci";
+import { CiCircleMore } from "react-icons/ci";
+
+import FeedCard from "@/components/FeedCard";
 
 export default function Home() {
   interface TwitterSidebarButton {
@@ -36,15 +40,23 @@ export default function Home() {
       icon: <BsBookmark />,
     },
     {
+      title: "Twitter Blue",
+      icon: <CiMoneyBill />,
+    },
+    {
       title: "Profile",
       icon: <AiOutlineUser />,
+    },
+    {
+      title: "More",
+      icon: <CiCircleMore />,
     },
   ];
   return (
     <div>
       <div className="grid grid-cols-12 h-screen w-screen px-48">
-        <div className="col-span-3  pt-8 pr-4">
-          <BsTwitter className="text-4xl  hover:bg-sky-700 rounded-full p-1 cursor-pointer transition-all" />
+        <div className="col-span-3 pt-1 pr-4 ml-30">
+          <BsTwitter className="text-3xl  hover:bg-sky-700 rounded-full p-1 cursor-pointer transition-all" />
           <ul className="text-xl mt-6 ">
             {sideBarMenuItems.map((items) => (
               <li className="flex justify-start items-center gap-3 hover:bg-sky-700 px-4 py-1 w-fit rounded-full cursor-pointer mt-3">
@@ -57,7 +69,21 @@ export default function Home() {
             Tweet
           </button>
         </div>
-        <div className="col-span-6 border-r-[1px] border-l-[1px] border-grey-400 "></div>
+        <div className="col-span-6 h-screen overflow-scroll ">
+          {/* <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard /> */}
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+        </div>
         <div className="col-span-3"></div>
       </div>
     </div>
